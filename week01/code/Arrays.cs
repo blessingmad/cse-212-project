@@ -9,11 +9,19 @@ public static class Arrays
     public static double[] MultiplesOf(double number, int length)
     {
         // TODO Problem 1 Start
-        // Remember: Using comments in your program, write down your process for solving this problem
-        // step by step before you write the code. The plan should be clear enough that it could
-        // be implemented by another person.
+        
+        //create a new array of size '7, 5' to hold the results
+        double[] result = new double[length];
 
-        return []; // replace this return statement with your own
+        // loop from  0 to length - 1
+        for (int i = 0; i < length; i++)
+        {
+            // after loop, return the populated array 
+            result[i] = number * (i + 1);
+        }
+        
+
+        return result; // replace this return statement with your own
     }
 
     /// <summary>
@@ -26,8 +34,21 @@ public static class Arrays
     public static void RotateListRight(List<int> data, int amount)
     {
         // TODO Problem 2 Start
-        // Remember: Using comments in your program, write down your process for solving this problem
-        // step by step before you write the code. The plan should be clear enough that it could
-        // be implemented by another person.
+        // calculate the number of elements to rotate
+        int splitIndex = data.Count - amount;
+        //GGet the two parts using the split index
+        List<int> firstPart = data.GetRange(0, splitIndex);
+        List<int> secondPart = data.GetRange(splitIndex, amount);
+
+        // clear the original list
+        data.Clear();
+        // add the second part first
+        data.AddRange(secondPart);
+        // add the first part
+        data.AddRange(firstPart);
+        // return the modified list
+        // no return needed as the list is modified in place
+
+
     }
 }
