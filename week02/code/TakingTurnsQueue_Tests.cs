@@ -7,6 +7,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 [TestClass]
 public class TakingTurnsQueueTests
 {
+    // the test had passed before the code was modified.
     [TestMethod]
     // Scenario: Create a queue with the following people and turns: Bob (2), Tim (5), Sue (3) and
     // run until the queue is empty
@@ -50,6 +51,7 @@ public class TakingTurnsQueueTests
         var tim = new Person("Tim", 5);
         var sue = new Person("Sue", 3);
         var george = new Person("George", 3);
+        //fixed expectedResult to be an array of Person objects.
 
         Person[] expectedResult = [bob, tim, sue, bob, tim, sue, tim, george, sue, tim, george, tim, george];
 
